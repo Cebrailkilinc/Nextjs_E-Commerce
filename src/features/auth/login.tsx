@@ -1,11 +1,11 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
+
 
 // Types
 import { IUser, IFormValues } from '@/types/types';
 
-import { AuthService } from '@/services/authService';
+
 import { useRouter } from 'next/navigation';
 import { Resolver, useForm } from "react-hook-form";
 
@@ -27,11 +27,9 @@ const Login = () => {
     //Define show password controll
     const [showPassword, setShowPassword] = useState<boolean>(true)
 
-    //Get token from state
-    const { token } = useAppSelector(state => state.auth)
-    const dispatch = useAppDispatch();
+   
 
-    const authService = new AuthService();
+  
     const router = useRouter();
 
     // Define form validation

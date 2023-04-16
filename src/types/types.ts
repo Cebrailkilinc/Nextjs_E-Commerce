@@ -4,17 +4,9 @@ export interface ITodo {
   title: string;
   completed: boolean;
 }
-export interface ITodos {
-  isLoading: boolean;
-  todos: ITodos[];
-}
+
 export interface ILayoutProps {
   children: React.ReactNode;
-}
-
-export interface ILogin {
-  isLoading: boolean;
-  token: string;
 }
 
 export interface IUser{
@@ -25,4 +17,21 @@ export interface IUser{
 export interface IFormValues{
   email: string;
   password: string;
+}
+
+export interface IAuthInitialState{
+  isLoading: boolean;
+  data:ILoginResponse;
+}
+export interface ILoginResponse{
+  status:string;
+  user:ILoginResponseUser;
+  token:string;
+}
+
+export interface ILoginResponseUser{
+  username:string;
+  email:string;
+  date:string;
+  id:string
 }
